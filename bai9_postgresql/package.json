@@ -1,0 +1,17 @@
+{
+  "name": "bai9_postgresql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "pq": "0.0.3",
+    "sequelize": "^4.38.0"
+  }
+}

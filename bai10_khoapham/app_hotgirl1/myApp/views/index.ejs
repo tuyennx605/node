@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <!-- //tat ca cac duong dan di tu goc ra -->
+    <!-- <base href="http://localhost:3001/">   -->
+    <title>hot girl</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="wraper">
+      <div class="option1">
+          <a href="./<%= parseInt(dangxem) -1 %>" class="trc">truoc</a>
+          <a href="./<%= parseInt(dangxem) +1 %>" class="sau">sau</a>
+      </div>
+      <div class="img">
+          <img src="images/<%= hinh%>" alt="">
+      </div>
+
+      <div class="like_dislike">
+        <a href="#" class="like" hinh = "<%=dangxem%>">like (0)</a>
+        <a href="#">dislike (0)</a>
+      </div>
+    </div> 
+
+
+    <script>
+      var nutlike = document.getElementsByClassName('like');
+      // console.log(nutlike);
+      nutlike[0].addEventListener('click', function(){
+        console.log(this.getAttribute('hinh'));
+        var url = "./like/"+this.getAttribute('hinh');
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = langngheRequest;
+        xhr.open('POST', url);
+        xhr.send({a: 1, haha: 2});
+
+        function langngheRequest(){
+          if(xhr.readyState == XMLHttpRequest.DONE){
+            console.log('xong');
+          }
+        }
+      });
+    
+    </script>
+
+  </body>
+</html>
