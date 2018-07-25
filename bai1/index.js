@@ -13,4 +13,5 @@ var solve = ()=>{
     debugger;
     console.log(tong);
 }
-    solve();    
+ solve();    
+ 
