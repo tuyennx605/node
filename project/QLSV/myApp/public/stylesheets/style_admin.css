@@ -1,0 +1,96 @@
+body{
+    width: 100%;
+}
+
+.top_top{
+    background-color: black;
+}
+.top_top>p, .top_top>button{
+    float: right;
+    line-height: 3;
+    color:#fff;
+    margin-right: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+
+
+.center1{
+    text-align: center;
+}
+
+.main-menu{
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: aqua;
+    display: inline-block;
+    position: relative;
+}
+
+.main-menu li{
+    list-style-type: none;
+    cursor: pointer;
+    
+}
+
+
+
+.sub-menu{
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    display: none;
+}
+
+.hien{
+    display: block;
+}
+
+.sub-menu li{
+    border-top: 1px solid #fff;
+    background-color: aquamarine;
+    padding: 5px 20px;
+    /* cursor: pointer; */
+}
+
+.sub-menu li:hover{
+    background-color: aqua;
+}
+
+.content1{
+    background-color: black;
+    margin-top: 20px;
+}
+
+table, th, td{
+	border:1px solid gray;
+	border-collapse:collapse;
+    padding: 10px;
+    color: #fff;
+}
+
+td{
+    width: 25%;
+}
+
+table{
+    width: 100%;
+}
+
+.top-table{
+    text-align: center;
+    background-color: blueviolet;
+    font-weight: bold;
+}
+
+.noidung:hover{
+    background: #fff;
+    color: black;
+}
+
+.noidung:hover>td{
+    /* background: #fff; */
+    color: black;
+}

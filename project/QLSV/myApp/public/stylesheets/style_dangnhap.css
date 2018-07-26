@@ -1,0 +1,29 @@
+body{
+    width: 100%;
+}
+
+.wraper{
+    width: 400px;
+    background-color:#052d58;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.wraper form{
+    color: #fff;
+}
+
+.wraper form .itext{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.divBtnDangNhap{
+    text-align: center;
+}
+
+.divBtnDangNhap input{
+    text-align: center;
+    padding: 15px;
+}
