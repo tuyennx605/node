@@ -1,0 +1,65 @@
+body{
+    background: black;
+    color:#fff;
+}
+
+.container{
+    border:1px solid #fff;
+}
+.top{
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.top-left{
+    padding: 30px 20px;
+    width: 80%;
+    /* background-color: blue; */
+    float: left;
+}
+
+.top-right{
+    padding: 30px 20px;
+    width: 20%;
+    float: right;
+}
+
+
+
+.top-right .btn{
+    padding: 30px 30px;
+    width: 100%;
+    margin-top: 2px;
+}
+
+.content{
+    margin: 20px 10px;
+}
+
+table{
+	width: 100%;
+}
+
+table, th, td{
+	border:2px solid #fff;
+	border-collapse:collapse;
+	padding: 10px;
+}
+
+th{
+    background-color: #750000;
+    text-align: center;
+}
+.tb_body{
+    cursor: pointer;
+}
+
+.tb_body:hover{
+    background-color: #d88d8d;
+    color: black;
+}
+
+.tuychon{
+    text-align: center;
+}

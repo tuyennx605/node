@@ -69,9 +69,42 @@ db.authenticate()
     console.log('endtuyen2: ');
   })
   }
+
+
+  let checkLoggin = async (user1)=>{
+    console.log(user1);
+
+
+    let qr = 'SELECT * FROM user1 WHERE ';
+    let dem = 0;
+    for(element in user1){
+      if(dem==0){
+         qr+= element;
+      }
+      else{
+          qr+= (' and '+ element);
+      }
+      qr+= ( "= '" + user1[element]+"'");
+      dem++;
+    }
+    qr+=';';
+    
+    let data = await db.query(qr);
+
+    if(data[0].length>0)
+      return true;
+    else
+      return false;
+  }
+
+
+
+
+
   module.exports = {
     db,
-    insertUser
+    insertUser,
+    checkLoggin
 };
     
 

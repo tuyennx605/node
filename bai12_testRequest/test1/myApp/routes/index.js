@@ -16,8 +16,7 @@ router.post('/test1/test', function(req, res, next) {
     res.json({
       data: "thanh cong"
     });
-    // res.render('', {hehe});
-    // res.send('hahaha');
+    
 });
 
 

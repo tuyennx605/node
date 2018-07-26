@@ -1,59 +1,60 @@
-document.addEventListener('DOMContentLoaded', function(){
-    var btn1 = document.getElementsByClassName('btn1');
-    // console.log(btn1);
-    btn1[0].addEventListener('click', function(){
+// document.addEventListener('DOMContentLoaded', function(){
+//     var btn1 = document.getElementsByClassName('btn1');
+//     // console.log(btn1);
+//     btn1[0].addEventListener('click', function(){
+//         // window.open("https://www.w3schools.com");
 
-        // var tam1 =  window.location.href;   //lay ra location hien tai:
-        //  http://localhost:3000/test1
+//         // var tam1 =  window.location.href;   //lay ra location hien tai:
+//         //  http://localhost:3000/test1
 
-        // var tam =    window.location.href.split("/");; //tao ra mang /
+//         // var tam =    window.location.href.split("/");; //tao ra mang /
 
-        // var tam = location.protocol;                              //http:
+//         // var tam = location.protocol;                              //http:
 
-        // var tam = location.hostname;                             //host localhost
-        // var tam = (location.port ? ':'+location.port: '');       //port: :3000
+//         // var tam = location.hostname;                             //host localhost
+//         // var tam = (location.port ? ':'+location.port: '');       //port: :3000
 
-        // console.log(tam);
+//         // console.log(tam);
 
-        var url = 'http://localhost:3000/test1/test';
-//         var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-//         xhr.open('POST', url, true);
-//         // xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-//         xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
-//    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-//         xhr.send({data: "du lieu"});
+//         var url = 'http://localhost:3000/test1/test';
+// //         var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+// //         xhr.open('POST', url, true);
+// //         // xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
+// //         xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
+// //    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+// //         xhr.send({data: "du lieu"});
 
-//         xhr.onreadystatechange = ()=>{
-//             if(xhr.readyState == XMLHttpRequest.DONE)
-//             {
-//                 console.log(xhr.response);
-//             }
-//         }
+// //         xhr.onreadystatechange = ()=>{
+// //             if(xhr.readyState == XMLHttpRequest.DONE)
+// //             {
+// //                 console.log(xhr.response);
+// //             }
+// //         }
 
 
-var http;
-if (window.XMLHttpRequest) {
-    // code for modern browsers
-    http = new XMLHttpRequest();
- } else {
-    // code for old IE browsers
-    http = new ActiveXObject("Microsoft.XMLHTTP");
-}
-var params = JSON.stringify({ appoverGUID: 123 });
-http.open("POST", url, true);
+// var http;
+// if (window.XMLHttpRequest) {
+//     // code for modern browsers
+//     http = new XMLHttpRequest();
+//  } else {
+//     // code for old IE browsers
+//     http = new ActiveXObject("Microsoft.XMLHTTP");
+// }
+// var params = JSON.stringify({ appoverGUID: 123 });
+// http.open("POST", url, true);
 
-http.setRequestHeader("Content-type", "application/json; charset=utf-8");
-// http.setRequestHeader("Content-length", params.length);
-// http.setRequestHeader("Connection", "close");
-http.setRequestHeader("haha", "valuer");
-http.onreadystatechange = function() {
-    if(http.readyState == 4 && http.status == 200) {
-        // alert(http.responseText);
-    }
-}
-http.send(params);
-    });
-}); 
+// http.setRequestHeader("Content-type", "application/json; charset=utf-8");
+// // http.setRequestHeader("Content-length", params.length);
+// // http.setRequestHeader("Connection", "close");
+// http.setRequestHeader("haha", "valuer");
+// http.onreadystatechange = function() {
+//     if(http.readyState == 4 && http.status == 200) {
+//         // alert(http.responseText);
+//     }
+// }
+// http.send(params);
+//     });
+// }); 
 
 
 
@@ -172,3 +173,30 @@ http.send(params);
 //             data: $('form').serialize(),
 //             dataType: "json",
 //             success: function(result) {}}
+
+
+document.addEventListener('DOMContentLoaded', function(){
+    const url = `${location.protocol}//${document.domain}:${
+        location.port
+    }/test1/test`;
+    console.log(url);
+        $.ajax({
+            url: url,
+            xhrFields: {
+                withCredentials: true
+            },
+            crossDomain:true,
+            type: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Access-Control-Allow-Origin": "*"
+            },
+            async: true,
+            // data: { username: username, password: password },
+            data: {heee: "xxx"},
+            dataType: "json",
+            success: function(result) {
+                console.log(result);
+            }})
+
+}); 
