@@ -31,7 +31,7 @@ router.put('/qlsv', (req, res, next) =>{
   });
 });
 
-router.put('/qlsv/round', function(req, res, next) {
+router.delete('/qlsv', function(req, res, next) {
   console.log(req.body);
   db.deleteById(req.body.id);
   res.json ( {he:"hi"});

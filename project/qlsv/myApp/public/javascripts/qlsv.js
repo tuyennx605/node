@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         const url = `${location.protocol}//${document.domain}:${
         location.port
-    }/qlsv/round`;
+    }/qlsvs`;
     console.log(url);
         $.ajax({
             url: url,
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 withCredentials: true
             },
             crossDomain:true,
-            type: "PUT",
+            type: "DELETE",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
                 "Access-Control-Allow-Origin": "*"
