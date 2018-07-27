@@ -31,8 +31,28 @@ router.put('/qlsv', (req, res, next) =>{
   });
 });
 
-router.delete('/qlsv', function(req, res, next) {
+router.put('/qlsv/round', function(req, res, next) {
   console.log(req.body);
   db.deleteById(req.body.id);
+  res.json ( {he:"hi"});
 });
+
+
+router.get('/qlsv/data', async(req, res, next)=> {
+  try {
+    var gtri = await db.getAlldb();
+    res.json (gtri);
+  } catch (error) {
+      console.log(error);
+  }
+  
+});
+
+
+router.put('/qlsv/sua', function(req, res, next) {
+  console.log(req.body);
+  db.EditById(req.body);
+  res.json ( {he:"hi"});
+});
+
 module.exports = router;

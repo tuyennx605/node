@@ -79,23 +79,64 @@ db.authenticate()
 
 
  var deleteById = (id)=>{
-    // let alldb =  db.query("delete from sinhvien where id = '"+id+"';");
-    // console.log(alldb);
+     console.log(id);
+    let alldb =  db.query("delete from sinhvien where id = '"+id+"';");
+    console.log(alldb);
     // let alldb = db
-    let alldb = db.destroy({
-        where: {
-            // id = '1'
-        }
-    })
+    // let alldb = db.destroy({
+    //     where: {
+    //         // id = '1'
+    //     }
+    // })
  }
 
+ var EditById = async(obj)=>{
+    //  try {
+        let qr = "update sinhvien set ";
+
+            var dem =0;
+        for(var property in obj){
+            if(dem==0)
+            {
+                dem++;
+                continue;
+            }
+                
+            if(dem==1)
+            {
+                qr+= (property + "= '" + obj[property]+"'");
+            }
+            else{
+                qr+= (" , "+property + "= '"  + obj[property] +"'");
+            }
+            dem++;
+            
+        }
+        qr+=" where id = '"+obj.id+"';";
+        console.log(qr);
+
+    
+        console.log(typeof obj);
+        
+       
+        
+    
+       let alldb =   db.query(qr);
+       console.log(alldb);
+    //  } catch (error) {
+    //     console.log(error);
+    //  }
+    
+
+}
 
 
   module.exports = {
     db,
     insertSV,
     getAlldb,
-    deleteById
+    deleteById,
+    EditById
 };
     
 

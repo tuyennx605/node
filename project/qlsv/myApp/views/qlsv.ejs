@@ -57,25 +57,30 @@
         </div>
         <div class="content">
                 <table style="width:100%">
-                    <tr>
-                        <th>Ho va Ten</th>
-                        <th>Ngay Sinh</th> 
-                        <th>Lop</th>
-                        <th>dia chi</th>
-                        <th>tuy chon</th>
-                    </tr>
-
-                    <%for(let i=0; i<data.length; i++){%>
-                            <tr class="tb_body">
-                                    <td><%=data[i].hoten%></td>
-                                    <td><%=data[i].namsinh%></td> 
-                                    <td><%=data[i].lop%></td>
-                                    <td><%=data[i].diachi%></td>
-                                    <td class="tuychon">
-                                        <button type="button" index = <%-'"'+i+'""'%> value1 = <%=data[i].id%> class="btn btn-danger xoa">xoa</button>
-                                    </td>
-                                </tr>
-                    <%}%>
+                     <thead>
+                        <tr>
+                                <th>Ho va Ten</th>
+                                <th>Ngay Sinh</th> 
+                                <th>Lop</th>
+                                <th>dia chi</th>
+                                <th>tuy chon</th>
+                            </tr>
+                    </thead>
+                    
+                    <tbody>
+                            <%for(let i=0; i<data.length; i++){%>
+                                    <tr class="tb_body">
+                                            <td><%=data[i].hoten%></td>
+                                            <td><%=data[i].namsinh%></td> 
+                                            <td><%=data[i].lop%></td>
+                                            <td><%=data[i].diachi%></td>
+                                            <td class="tuychon">
+                                                <button type="button" index = <%-'"'+i+'""'%> value1 = <%=data[i].id%> class="btn btn-danger xoa">xoa</button>
+                                            </td>
+                                        </tr>
+                            <%}%>
+                        </tbody>
+                    
 
                     <!-- <tr class="tb_body">
                         <td>Jill</td>
