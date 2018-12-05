@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <!-- socketio: http://localhost:3000/socket.io/socket.io.js -->
+    <script src="socket.io/socket.io.js"></script>  
+    <script>
+        const socket = io('http://localhost:3000');
+    </script>
+</head>
+<body>
+
+    <input type="text" name="" id="iptaoroom">
+    <button id="taoroom"> tao room </button>
+    <button id="gui"> gui data </button>
+
+    <script>
+        $(document).ready(()=>{
+            // alert('hahah');
+
+            // //socketio
+            // $('#gui').click(()=>{
+            //     // alert('hahah');
+            //     socket.emit('tenemit', {key: "tuyen"});
+            // });
+
+            // socket.on('guiall_truno', (data)=>{
+            //     console.log(data);
+            // });
+
+             $('#taoroom').click(()=>{
+                // alert('hahah');
+                socket.emit('tao_room', {data: $('#iptaoroom').val() });
+            });
+        });
+        </script>
+</body>
+</html>

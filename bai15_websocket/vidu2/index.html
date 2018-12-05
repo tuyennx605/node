@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+        const ws = new WebSocket("ws://localhost:3000");
+        
+        ws.onopen = ()=>{
+            console.log('chat chat');
+            ws.send(JSON.stringify({name: "tuyen", age: 20}));
+        }
+
+        ws.onclose = ()=>{
+            console.log('het chat');
+        }
+
+        ws.onmessage = (msg)=>{
+            console.log(msg);
+        }
+
+
+    </script>
+</body>
+</html>
